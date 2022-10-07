@@ -596,36 +596,21 @@
 		<br /><br />
 		<h1 class="text-center font-weight-bold" style="font-size:3em;">LOCALES Y HORARIOS:</h1>
 		<br />
-	    <div class="row" style="font-size:1.2em;background-color:#000000;margin:8px;">
-		<div class="col-12 col-sm-12 col-md-6">
+		<div>
 					<p class="text-center"  style="font-size:1.5em;color:#858585;"><b>Burger Los Nogales (León)</b></p>
 					<p class="text-center"> <b>Dirección:</b> calle Cardenal Landázuri, 7, 24003 León<p>
 					<p class="text-center"><b>Teléfono:</b></p>
 					<p class="text-center"><a href="tel:+34987345590">987 34 55 90</a></p>
-					<p class="text-center"> <a href="tel:+34"></a></p>
-					<p class="text-center"><b>Horario:</b></p>
-					<p class="text-center">Miércoles a Viernes </p>
-					<p class="text-center">08:30 - 16:00 / 19:00 - 23:30</p>
-					<p class="text-center">Sábados y Domingos</p>
-					<p class="text-center">13:00 - 16:00 / 19:00 - 23:30</p>
-					<p class="text-center"><b>Servicios:</b> comer allí, para llevar y a domicilio</p>
-					<p class="text-center"><a href="https://www.google.es/maps/place/Burger+Los+Nogales/@42.6001897,-5.5695547,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xc43b21471d7bd040!8m2!3d42.6001897!4d-5.567366" class="btn btn-info" target="_blank"><i class="fas fas fa-map-marked-alt fa-fw"></i> &nbsp; Google Maps</a></p>
-					
-					
-		</div>
-		<div class="col-12 col-sm-12 col-md-6">
-					<p class="text-center"  style="font-size:1.5em;color:#858585;"><b>Burger Los Nogales (Ctra Asturias)</b></p>
-					<p class="text-center"> <b>Dirección:</b> km 137, Ctra. Asturias, 24008 Carbajal de la Legua, León</p>
-					<p class="text-center"><b>Teléfono:</b></p>
-					<p class="text-center"><a href="tel:+34987576059"> 987 57 60 59 </a></p>
 					<p class="text-center"><a href="tel:+34681042404"> 681 04 24 04 </a></p>
 					<p class="text-center"><b>Horario:</b></p>
-					<p class="text-center">Miércoles a Domingo</p>
-					<p class="text-center">13:00 - 16:00 / 19:00 - 23:30</p>
+					<p class="text-center">Lunes a Viernes </p>
+					<p class="text-center">08:30 - 16:00 / 19:00 - 00:00</p>
+					<p class="text-center">Sábados y Domingos</p>
+					<p class="text-center">13:00 - 16:00 / 19:00 - 00:00</p>
 					<p class="text-center"><b>Servicios:</b> comer allí, para llevar y a domicilio</p>
-					<p class="text-center"><a href="https://www.google.com/maps/place/Burger+Los+Nogales/@42.659008,-5.5945445,17z/data=!4m5!3m4!1s0x0:0x9550f1ce8e8572e0!8m2!3d42.6596116!4d-5.5943192" class="btn btn-info" target="_blank"><i class="fas fas fa-map-marked-alt fa-fw"></i> &nbsp; Google Maps</a></p>
+					<p class="text-center"><a href="https://www.google.es/maps/place/Burger+Los+Nogales/@42.6001897,-5.5695547,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0xc43b21471d7bd040!8m2!3d42.6001897!4d-5.567366" class="btn btn-info" target="_blank"><i class="fas fas fa-map-marked-alt fa-fw"></i> &nbsp; Google Maps</a></p>
 		</div>
-		  </div>
+		
 		<div id="map"></div>		
 	</div>
 	<div style ="margin:10px;">
@@ -665,23 +650,13 @@
          function initMap() {
 			// The location of Uluru
 			const uluru = { lat: 42.690246, lng: -5.595715 };
-			const local1 = { lat: 42.65964808490648, lng: -5.594337704863364};
 			const local2 = { lat: 42.600191908575965, lng: -5.567327830922579};
 			// The map, centered at Uluru
 			const map = new google.maps.Map(document.getElementById("map"), {
 			  zoom: 11,
 			  center: uluru,
 			});
-			const contentStringLocal1 =
-				'<div style="color:black;">' +
-					'<p><span style="font-weight:bold;">Burger Los Nogales</span> <br />' +
-					'km 137 <br />' +
-					'Ctra. Asturias <br />' +
-					'24008 Carbajal de la Legua <br />' +
-					'León, España <br />' +
-					'<a href="https://www.google.com/maps/place/Burger+Los+Nogales/@42.659008,-5.5945445,17z/data=!4m5!3m4!1s0x0:0x9550f1ce8e8572e0!8m2!3d42.6596116!4d-5.5943192" target="_blank">' +
-					'Ver en Google Maps</a></p> '+
-				'</div>';
+			
 			const contentStringLocal2 =
 				'<div style="color:black;">' +
 					'<p><span style="font-weight:bold;">Burger Los Nogales</span> <br />' +
@@ -692,23 +667,12 @@
 					'Ver en Google Maps</a></p> '+
 				'</div>';	
 			
-			const infowindow1 = new google.maps.InfoWindow({
-					content: contentStringLocal1,
-					maxWidth: 300
-				  });
+			
 			const infowindow2 = new google.maps.InfoWindow({
 					content: contentStringLocal2,
 					maxWidth: 300
 				  })
 			
-			// The marker, positioned at Uluru
-			const marker1 = new google.maps.Marker({
-			  position: local1,
-			  map: map,
-			  title: 'Burgue los nogales',
-			  animation:google.maps.Animation.DROP,
-			  mapTypeId: google.maps.MapTypeId.HYBRID,
-			});
 			
 			const marker2 = new google.maps.Marker({
 			  position: local2,
@@ -717,11 +681,6 @@
 			  animation:google.maps.Animation.DROP,
 			  mapTypeId: google.maps.MapTypeId.HYBRID,
 			});
-			infowindow1.open(map, marker1);
-			infowindow2.open(map, marker2);
-			marker1.addListener('click', function() {
-								 infowindow1.open(map, marker1);
-								});  
 			marker2.addListener('click', function() {
 								 infowindow2.open(map, marker2);
 								});  					
